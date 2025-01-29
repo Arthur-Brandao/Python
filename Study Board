@@ -1,4 +1,6 @@
 """
+These are the operators in Python
+
 Operators           Meaning
     >             Is greater than
     >=         Is greater than or equal to
