@@ -1,0 +1,10 @@
+"""
+Operators           Meaning
+    >             Is greater than
+    >=         Is greater than or equal to
+    <              Is less than
+    <=         Is less than or equal to
+    ==              Equal to
+    !=           Is not equal to
+
+"""
