@@ -1,0 +1,49 @@
+while True:
+    numero1 = input("Insira o 1º número: ") #Primeiro número a ser digitado
+    numero2 = input("Insira o 2º número: ") #Segundo número a ser digitado
+    operador = input("Insira o operador: ") #Operador lógico
+    
+    numeros_validos = None #Flag que representa os números válidos no input numero1
+    
+    numero1_float = 0 #Variável para converter numero1 em Float com valor inicial 0
+    numero2_float = 0 #Variável para converter numero2 em float com valor inicial 0
+    
+    try:
+        numero1_float = float(numero1) #Convertendo entrada para float
+        numero2_float = float(numero2) #Convertendo entrada para float
+        numeros_validos = True #Setando flag para True, se ambas entradas acima estiverem corretas
+    except:
+        numeros_validos = None #Validando flag com valor False, se alguma das entradas acima estiverem erradas
+    
+    if numeros_validos is None:
+        print("Um ou ambos numeros digitados são inválidos") #Retornando mensagem de alerta ao usuário
+        continue #O programa deve continuar lendo o código
+
+    operador_valido = '+-*/**' #Definindo operadores lógicos válidos
+    
+    if operador not in operador_valido:
+        print("Operador inválido") #Retornando mensagem de alerta ao usuário
+        continue #O programa deve continuar lendo o código
+    
+    if len(operador) > 1:
+        print("Apenas 1 operador é permitido") #Retornando mensagem de alerta ao usuário
+        continue #O programa deve continuar lendo o código
+
+    '''
+    Operações lógicas
+    '''
+
+    print("Calculando, aguarde...")
+
+    if operador == "+":
+        print(f'{numero1_float} + {numero2_float}=',numero1_float + numero2_float) #Adição
+    elif operador == "-":
+        print(f'{numero1_float} - {numero2_float}=',numero1_float - numero2_float) #Subtração
+    elif operador == "*":
+        print(f'{numero1_float} * {numero2_float}=',numero1_float * numero2_float) #Multiplicação
+    elif operador == "/":
+       print(f'{numero1_float} / {numero2_float}=',numero1_float / numero2_float) #Divisão
+
+    sair = input("Fechar o programa? [S]. Se não, digite qualquer caractere para repetir: ").lower().startswith('s') #Pergunta final
+    if sair is True:
+        break
