@@ -1,0 +1,31 @@
+saldo = 1000
+
+while True:
+    try:
+        print("Seja bem vindo ao Banco XPTO. Digite a opção desejada: [1] Saque | [2] Depósito | [3] Ver Saldo | [4] Encerrar Atendimento")
+        entrada = int(input("Escolha uma opção: "))
+        
+        if entrada == 1:
+            print(f'Seu saldo é de R$ {saldo:.2f}')
+            saque = float(input("Quanto deseja sacar? R$ "))
+            if saque > saldo:
+                print("Saldo insuficiente, tente novamente")
+            elif saque <= 0:
+                print("Digite um valor válido")
+            else:
+                saldo -= saque
+                print("Aguarde a contagem das notas...")
+                print(f'Saque realizado com sucesso. Seu saldo é de R${saldo:.2f}')
+        if entrada == 2:
+            deposito = float(input("Quanto deseja depositar?"))
+            saldo = saldo + deposito
+            print(f'Depósito efetuado com sucesso. Seu saldo é de {saldo}')
+            continue
+        if entrada == 3:
+            print(f'Seu saldo é de R${saldo:.2f}')
+            continue
+        if entrada == 4:
+            print("Banco XPTO agradece sua preferência.")
+            break
+    except ValueError:
+        print("Por favor, digite apenas números")
