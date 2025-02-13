@@ -1,0 +1,23 @@
+import random
+
+numero = random.randint(1, 50)
+tentativas = 0
+max_tentativas = 5  # Limite de tentativas
+
+while True:
+    entrada = int(input("Teste sua sorte! "))
+    tentativas += 1
+
+    if entrada == numero:
+        print(f"Acertou! O número correto era {numero}")
+        print(f"Você tentou {tentativas} vezes.")
+        break  # Sai do loop ao acertar
+
+    elif entrada < numero:
+        print("É mais alto!")
+    else:
+        print("É menor!")
+
+    if tentativas == max_tentativas:  # Agora verifica antes de pedir mais um número
+        print(f"Você perdeu! O número era {numero}")
+        break  # Sai do loop ao atingir o limite
